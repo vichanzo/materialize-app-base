@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- get_json.html testing the get_json
+https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_ajax_getjson -->
+
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.getJSON("http://localhost:8000/demo_ajax_json.js", function(result){
+      $.each(result, function(i, field){
+        $("div").append(field + " ");
+      });
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Get JSON data</button>
+
+<div></div>
+
+</body>
+</html>
